@@ -1,0 +1,61 @@
+<div class="video-display-overlay" (click)="onOverlayClick($event)">
+  <div class="video-display-content" (click)="$event.stopPropagation()">
+    <img class="img-back" src="/assets/img/arrow_back.png" (click)="close()" />
+    <div class="video-img-container">
+      <img [src]="video.image" alt="previewImg" />
+      <span class="presents-logo">V </span>
+      <span class="presents-text">Film</span>
+    </div>
+
+    <div class="video-player-content"
+      (mouseenter)="showQualitySelector()"
+      (mouseleave)="hideQualitySelector()"
+      (mousemove)="checkMouseMove()"
+    >
+      <div class="description-container">
+        <div class="description-header">
+          <span>Video Description</span>
+          <img src="../../../../assets/icons/{{checkIfFavorite() ? 'icon-star' : 'star-empty-icon'}}.png" 
+            alt="starImg" 
+            class="starIconImg" 
+            (click)="addFavorite(video)"
+            [class.disabled]="isRequestInProgress"
+            [style.pointer-events]="isRequestInProgress ? 'none' : 'auto'"
+            >
+        </div>
+        <span class="description-text">{{ video.description }}</span>
+      </div>
+
+      <div class="quality-selector">
+        <button class="dropdown-toggle" 
+          (click)="toggleDropdown()"
+          [ngClass]="{ 
+            'hideQualitySelector': !showQualitySelectorBool && showQualitySelectorBool !== null,
+            'showQualitySelector': showQualitySelectorBool
+          }"
+          >{{currentQuality}}</button>
+          @if (dropdownOpen) {
+            <div class="dropdown-menu" [ngClass]="{'hideQualitySelector': !showQualitySelectorBool}">
+              <div class="qualityBtn" (click)="onQualityChange('1080p')">1080p</div>
+              <div class="qualityBtn" (click)="onQualityChange('720p')">720p</div>
+              <div class="qualityBtn" (click)="onQualityChange('480p')">480p</div>
+              <div class="qualityBtn" (click)="onQualityChange('auto')">Auto</div>
+            </div>
+          }
+      </div>
+      
+      <video
+        id="videoPlayer"
+        class="video-js vjs-theme-city"
+        controls
+        preload="auto"
+        width="640"
+        height="264"
+        data-setup="{}"
+      >
+        <source [src]="video.video_folder" type="application/x-mpegURL" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>

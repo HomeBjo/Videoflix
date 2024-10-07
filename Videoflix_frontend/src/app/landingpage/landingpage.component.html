@@ -1,0 +1,17 @@
+<section>
+    <app-header [showImage]="true"></app-header>
+    <div class="contentDiv">
+        <h1>Movies, TV shows and more</h1>
+        <h2>Watch whenever you want, wherever you want</h2>
+        <span>Enter your email to create your membership</span>
+        <div class="inputBox">
+            <input type="email" [(ngModel)]="userService.user_email" placeholder="Email Adress">
+            <button [routerLink]="['/register']">Sign up <img src="../../assets/img/white_arrow_right.svg" alt=""></button>
+        </div>
+    </div>
+
+    <footer>
+        <span [routerLink]="['/privacy_policy']">Privacy Policy</span>
+        <span [routerLink]="['/imprint']">Imprint</span>
+    </footer>
+</section>

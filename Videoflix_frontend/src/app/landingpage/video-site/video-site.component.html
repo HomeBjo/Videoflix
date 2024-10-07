@@ -1,0 +1,152 @@
+<div class="videoPlayerBox">
+    <video autoplay muted loop #myVideo class="backgroundVideo">
+        <source src="../../../assets/videos/Breakout.mp4" type="video/mp4">
+    </video>
+    <div class="shadow"></div>
+</div>
+
+<section>
+    <div class="descriptionDivBreakout">
+        <h1>Breakout</h1>
+        <span>
+            In a high-security prison, a wrongly convicted man formulates a
+            meticulous plan to break out and prove his innocence. He must navigate a
+            web of alliances and betrayals to reclaim his freedom and expose the
+            truth.
+        </span>
+        <button class="blueBtn" (click)="playVideo('../../../assets/videos/Breakout.mp4')"><img src="../../../assets/icons/play_arrow.svg" alt="playImg">Play</button>
+    </div>
+    <div class="videoDiv">
+        <div class="videoDiv2">
+            @if (checkIfFavoreitesAvailable()) {
+                <div class="videoPosition">
+                    <h1>My List</h1>
+                    <div class="video4LoopContainer">
+                        @if (showArrows[0]) {
+                            <div class="arrowLeft">
+                                <button (click)="ArrowLeftClick(0)"><img src="../../../assets/icons/arrowLeft.png" alt=""></button>
+                            </div>
+                        }
+                        <div class="video4LoopBox" #video4LoopBox0>
+                            @for (video of getFavorites(); track $index) {
+                                <app-video-preview
+                                    [video]="video"
+                                    (videoSelected)="onVideoSelected($event)"
+                                ></app-video-preview>
+                            }
+                        </div>
+                        @if (showArrows[0]) {
+                            <div class="arrowRight">
+                                <button (click)="ArrowRightClick(0)"><img src="../../../assets/icons/arrowRight.png" alt=""></button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+            
+            <div class="videoPosition">
+                <h1>New on Videoflix</h1>
+                <div class="video4LoopContainer">
+                    @if (showArrows[1]) {
+                        <div class="arrowLeft">
+                            <button (click)="ArrowLeftClick(1)"><img src="../../../assets/icons/arrowLeft.png" alt=""></button>
+                        </div>
+                    }
+                    <div class="video4LoopBox" #video4LoopBox1>
+                        @for (video of newVideos.slice(0, 10); track $index) {
+                            <app-video-preview
+                                [video]="video"
+                                (videoSelected)="onVideoSelected($event)"
+                            ></app-video-preview>
+                        }
+                    </div>
+                    @if (showArrows[1]) {
+                        <div class="arrowRight">
+                            <button (click)="ArrowRightClick(1)"><img src="../../../assets/icons/arrowRight.png" alt=""></button>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="videoPosition">
+                <h1>Citys</h1>
+                <div class="video4LoopContainer">
+                    @if (showArrows[2]) {
+                        <div class="arrowLeft">
+                            <button (click)="ArrowLeftClick(2)"><img src="../../../assets/icons/arrowLeft.png" alt=""></button>
+                        </div>
+                    }
+                    <div class="video4LoopBox" #video4LoopBox2>
+                        @for (video of newVideos; track $index) {
+                            @if (video.category === 'city') {
+                                <app-video-preview
+                                    [video]="video"
+                                    (videoSelected)="onVideoSelected($event)"
+                                ></app-video-preview>
+                            }
+                        }
+                    </div>
+                    @if (showArrows[2]) {
+                        <div class="arrowRight">
+                            <button (click)="ArrowRightClick(2)"><img src="../../../assets/icons/arrowRight.png" alt=""></button>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="videoPosition">
+                <h1>Anime</h1>
+                <div class="video4LoopContainer">
+                    @if (showArrows[3]) {
+                        <div class="arrowLeft">
+                            <button (click)="ArrowLeftClick(3)"><img src="../../../assets/icons/arrowLeft.png" alt=""></button>
+                        </div>   
+                    }
+                    <div class="video4LoopBox marginBottom" #video4LoopBox3>
+                        @for (video of newVideos; track $index) {
+                            @if (video.category === 'anime') {
+                                <app-video-preview
+                                    [video]="video"
+                                    (videoSelected)="onVideoSelected($event)"
+                                ></app-video-preview>
+                            }
+                        }
+                    </div>
+                    @if (showArrows[3]) {
+                        <div class="arrowRight">
+                            <button (click)="ArrowRightClick(3)"><img src="../../../assets/icons/arrowRight.png" alt=""></button>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="videoPosition">
+                <h1>Animal</h1>
+                <div class="video4LoopContainer">
+                    @if (showArrows[4]) {
+                        <div class="arrowLeft">
+                            <button (click)="ArrowLeftClick(4)"><img src="../../../assets/icons/arrowLeft.png" alt=""></button>
+                        </div>   
+                    }
+                    <div class="video4LoopBox marginBottom" #video4LoopBox4>
+                        @for (video of newVideos; track $index) {
+                            @if (video.category === 'animal') {
+                                <app-video-preview
+                                    [video]="video"
+                                    (videoSelected)="onVideoSelected($event)"
+                                ></app-video-preview>
+                            }
+                        }
+                    </div>
+                    @if (showArrows[4]) {
+                        <div class="arrowRight">
+                            <button (click)="ArrowRightClick(4)"><img src="../../../assets/icons/arrowRight.png" alt=""></button>
+                        </div>
+                    }
+                </div>
+                <app-video-display
+                    *ngIf="selectedVideo"
+                    [video]="selectedVideo"
+                    (closeDisplay)="closeVideoDisplay()"
+                ></app-video-display>
+            </div>
+        </div>
+    </div>
+</section>

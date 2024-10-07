@@ -1,0 +1,174 @@
+@import "./../../styles.scss";
+
+section {
+  height: 100dvh;
+  width: 100vw;
+  @include dFlex($j: space-between);
+  flex-direction: column;
+  background-image: url("../../assets/img/start_side_background.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: inset 0 0 400px 400px #000000bd;
+  color: whitesmoke;
+}
+
+.headerDiv {
+  @include dFlex($j: space-between);
+  padding: 3rem;
+  width: calc(100% - 6rem);
+  img {
+    width: 20rem;
+    height: auto;
+    object-fit: contain;
+  }
+  button {
+    color: whitesmoke;
+    background-color: $btnColor;
+    padding: 26px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border: none;
+    border-radius: 40px;
+    font-size: larger;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    &:hover {
+      background-color: whitesmoke;
+      color: #2e3edf;
+    }
+  }
+}
+
+.contentDiv {
+  margin-bottom: 12rem;
+  @include dFlex();
+  flex-direction: column;
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+  span {
+    font-size: 1.2rem;
+    font-weight: 200;
+    margin-bottom: 2rem;
+  }
+  .inputBox {
+    @include dFlex($g: 62px);
+    width: 100%;
+    button {
+      @include dFlex($g: 8px);
+      padding: 14px;
+      padding-left: 18px;
+      padding-right: 18px;
+      font-size: larger;
+      background-color: $btnColor;
+      border: none;
+      border-radius: 40px;
+      color: whitesmoke;
+      cursor: pointer;
+      transition: ease-in-out 0.3s;
+      &:hover {
+        background-color: whitesmoke;
+        color: #2e3edf;
+        img {
+          filter: invert(42%) sepia(100%) saturate(4000%) hue-rotate(220deg)
+            brightness(95%) contrast(90%);
+        }
+      }
+    }
+    input {
+      border: 1px solid whitesmoke;
+      border-radius: 40px;
+      font-size: larger;
+      padding: 12px;
+      padding-left: 16px;
+      background: transparent;
+      color: whitesmoke;
+      outline: none;
+      min-width: 56%;
+    }
+    ::placeholder {
+      color: rgba(245, 245, 245, 0.7);
+      opacity: 1; /* Firefox */
+    }
+    
+    ::-ms-input-placeholder { /* Edge 12 -18 */
+      color: rgba(245, 245, 245, 0.7);
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  margin: 2rem;
+  @include dFlex($g: 80px);
+  span {
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: ease-in-out 0.3s;
+    &:hover {
+      color: $btnColor;
+      text-shadow: -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke,
+        -1px 1px 0 whitesmoke, 1px 1px 0 whitesmoke;
+    }
+  }
+}
+
+@media (min-width: $screanWidthQHD) {
+  .contentDiv {
+    margin-bottom: 12rem;
+    @include dFlex();
+    h1 {
+      font-size: 4rem;
+    }
+    h2 {
+      font-size: 2.0rem;
+      font-weight: 500;
+    }
+    span {
+      font-size: 2.0rem;
+      font-weight: 300;
+    }
+    .inputBox {
+      button {
+        font-size: x-large;
+        img{
+          width: 20px;
+          height: 20px;
+        }
+      }
+      input {
+        border: 2px solid whitesmoke;
+        font-size: x-large;
+      }
+    }
+  }
+
+  footer {
+    span {
+      font-size: x-large;
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .contentDiv {
+    margin-bottom: 0rem;
+    flex-direction: column;
+    text-align: center;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+    .inputBox {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+}

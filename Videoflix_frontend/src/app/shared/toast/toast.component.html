@@ -1,0 +1,11 @@
+@if (show) {
+<div class="toast-container" [ngClass]="[type, show ? 'show' : '', hide ? 'hide' : '']">
+  <div class="left-side"></div>
+  <img src="/assets/img/info.png" alt="">
+  <div class="toast-message">
+    {{ message }}
+  </div>
+  <img src="/assets/img/vector.png" alt="">
+  <img (click)="closeToast()" class="close-img" src="/assets/img/close_small.png" alt="">
+</div>
+}

@@ -1,0 +1,62 @@
+
+<section>
+    <app-header [showImage]="false"></app-header>
+    <div class="mainContent">
+        <form class="contentDiv" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+            <h1>Log in</h1>
+            <div class="positionInputs">
+                <!----Email------>
+                <input type="email" [(ngModel)]="userService.user_email" placeholder="Email" name="email" #email="ngModel" required pattern="[^@]+@[^\.]+\..+" class="normalInput">
+                @if (!email.valid && email.touched && !email.disabled) {
+                    <div class="invalidFeedback">
+                        @if (userService.user_email == ''){
+                            <span><img src="../../../../assets/img/warning.svg" alt="allertImg">Email is required</span>
+                        } @else {
+                            <span><img src="../../../../assets/img/warning.svg" alt="allertImg">Please check whether the email is correct</span>
+                        }
+                    </div>
+                }
+                <!----Password------>
+                <div class="passwortImg">
+                    <input [type]="passwordFieldType" [(ngModel)]="password" placeholder="Password" name="firstPassword" #firstPassword="ngModel" required class="passwordInput">
+                    <img src="../../assets/img/blue_eye.svg" alt="eye image" (click)="togglePasswordVisibility()">
+                </div>
+                @if (!checkPassword() &&firstPassword.touched) {
+                    <div class="invalidFeedback">
+                        @if (password == ''){
+                            <span><img src="../../../../assets/img/warning.svg" alt="allertImg">Password is required</span>
+                        } 
+                    </div>
+                }
+            </div>
+            <div class="rememberContainer">
+                <input type="checkbox" id="styledCheckbox" [checked]="rememberMe" (click)="checkRememberMe()">
+                @if (!checkWindowWidth()) {
+                    <span>Remember me 
+                        <img src="../../../../assets/icons/icons-help.png" alt="icon-question-mark"
+                        (mouseenter)="showQuestionWindow()" (mouseleave)="showQuestionWindow()">
+                        <div class="questionDiv" [ngClass]="{'shwoQ-Div': showQesttionDiv ,'hideQ-Div' : !showQesttionDiv }">Remember me does not work on Guest login.</div>
+                    </span>
+                } @else {
+                    <span>Remember me 
+                        <img src="../../../../assets/icons/icons-help.png" alt="icon-question-mark"
+                        (click)="showQuestionWindow()">
+                        <div class="questionDiv" [ngClass]="{'shwoQ-Div': showQesttionDiv ,'hideQ-Div' : !showQesttionDiv }">Remember me does not work on Guest login.</div>
+                    </span>
+                }
+            </div>
+            <div class="btnBox">
+                <button type="submit" class="submitBtn" [ngClass]="{'submitBtn': checkAllInputs(), 'submitBtnDisabled': !checkAllInputs()}" [disabled]="!checkAllInputs()">Log in</button>
+                <span class="guestLogin" (click)="guestLogin()">Guest login</span>
+            </div>
+        </form>
+        <div class="forgotContainer">
+            <span [routerLink]="['/email-send']" class="blueText">Forgot password?</span>
+        </div>
+        <div class="signContainer">
+            <span class="blackText">New to Videoflix?</span>
+            <span [routerLink]="['/register']" class="blueText">Sign Up now</span>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</section>
