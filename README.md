@@ -12,7 +12,7 @@ Technologien
  -Datenbank: PostgreSQL
  -Caching und Warteschlangen: Redis für Caching und asynchrone Aufgaben
  -Streaming: HLS mit FFmpeg und Video.js
- -API-Interaktionen: Axios (Frontend), Django REST Framework (Backend)
+ -API-Interaktionen: HttpClient (Frontend), Django REST Framework (Backend)
 
 Anforderungen
 Frontend:
