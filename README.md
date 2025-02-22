@@ -33,4 +33,4 @@ Für zukünftige Entwicklungen wird jedoch eine detaillierte Commit-Historie gep
 
 Weitere Details zur Entwicklung:
 
-Für eine detaillierte Commit-Historie und eine Einsicht in den Entwicklungsprozess des Teams, besuchen Sie das Repository mit der vollständigen Commit-Historie https://github.com/A1eksD/Videoflix_backend, https://github.com/A1eksD/Videoflix_frontend.
+Für eine detaillierte Commit-Historie und eine Einsicht in den Entwicklungsprozess des Teams, besuchen Sie das Repository mit der vollständigen Commit-Historie https://github.com/HomeBjo/VideoFlix-Backend, https://github.com/HomeBjo/VideoFlix-Frontend.
