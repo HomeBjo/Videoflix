@@ -1,6 +1,6 @@
 ﻿# Videoflix Project
 
- # 🚀 **Detaillierte Commit-Historie & Entwicklungseinblick** 🚀
+ #  **Detaillierte Commit-Historie & Entwicklungseinblick** 
 
 **Für eine detaillierte Commit-Historie und eine Einsicht in den Entwicklungsprozess des Teams, besuchen Sie das Repository mit der vollständigen Commit-Historie:**
 
