@@ -4,8 +4,8 @@
 
 **Für eine detaillierte Commit-Historie und eine Einsicht in den Entwicklungsprozess des Teams, besuchen Sie das Repository mit der vollständigen Commit-Historie:**
 
-🔗 [VideoFlix-Backend](https://github.com/HomeBjo/VideoFlix-Backend)  
-🔗 [VideoFlix-Frontend](https://github.com/HomeBjo/VideoFlix-Frontend)
+🔗 **VideoFlix-Backend:** [https://github.com/HomeBjo/VideoFlix-Backend](https://github.com/HomeBjo/VideoFlix-Backend)  
+🔗 **VideoFlix-Frontend:** [https://github.com/HomeBjo/VideoFlix-Frontend](https://github.com/HomeBjo/VideoFlix-Frontend)
 
 
 Videoflix ist eine Full-Stack-Webanwendung, die es Benutzern ermöglicht, Filme und TV-Serien zu durchsuchen, zu streamen und eigene Wiedergabelisten zu erstellen. 
