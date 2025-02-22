@@ -1,4 +1,13 @@
 ﻿# Videoflix Project
+
+ # 🚀 **Detaillierte Commit-Historie & Entwicklungseinblick** 🚀
+
+**Für eine detaillierte Commit-Historie und eine Einsicht in den Entwicklungsprozess des Teams, besuchen Sie das Repository mit der vollständigen Commit-Historie:**
+
+🔗 [VideoFlix-Backend](https://github.com/HomeBjo/VideoFlix-Backend)  
+🔗 [VideoFlix-Frontend](https://github.com/HomeBjo/VideoFlix-Frontend)
+
+
 Videoflix ist eine Full-Stack-Webanwendung, die es Benutzern ermöglicht, Filme und TV-Serien zu durchsuchen, zu streamen und eigene Wiedergabelisten zu erstellen. 
 Das Projekt umfasst ein Angular-Frontend und ein Django-Backend, welche zusammenarbeiten, um ein reibungsloses Streaming-Erlebnis zu bieten.
 
@@ -31,6 +40,6 @@ Dieses Repository enthält derzeit nur einen vollständigen Commit des gesamten 
 Dabei wurde der Code schrittweise außerhalb dieses Repositories entwickelt und erst später als fertiges Projekt hochgeladen. Daher sind keine detaillierten Entwicklungsschritte als einzelne Commits ersichtlich.
 Für zukünftige Entwicklungen wird jedoch eine detaillierte Commit-Historie gepflegt, um die Zusammenarbeit und den Fortschritt besser zu dokumentieren.
 
-Weitere Details zur Entwicklung:
 
-Für eine detaillierte Commit-Historie und eine Einsicht in den Entwicklungsprozess des Teams, besuchen Sie das Repository mit der vollständigen Commit-Historie https://github.com/HomeBjo/VideoFlix-Backend, https://github.com/HomeBjo/VideoFlix-Frontend.
+
+
